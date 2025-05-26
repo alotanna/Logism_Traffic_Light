@@ -32,32 +32,6 @@ The system uses two timing inputs:
 - **x = 1**: When counter reaches 5 seconds (for yellow light duration)
 - **y = 1**: When counter reaches 15 seconds (for green light duration)
 
-### State Transition Logic
-
-The next state logic is implemented using the following truth table:
-
-| Current State | Timing | Next State |
-|---------------|--------|------------|
-| A B           | x y    | A(t+1) B(t+1) |
-| 0 0           | 0 0    | 0 0        |
-| 0 0           | 0 1    | 0 1        |
-| 0 0           | 1 0    | 0 0        |
-| 0 0           | 1 1    | X X        |
-| 0 1           | 0 0    | 0 1        |
-| 0 1           | 0 1    | 0 1        |
-| 0 1           | 1 0    | 1 0        |
-| 0 1           | 1 1    | X X        |
-| 1 0           | 0 0    | 1 0        |
-| 1 0           | 0 1    | 1 1        |
-| 1 0           | 1 0    | 1 0        |
-| 1 0           | 1 1    | X X        |
-| 1 1           | 0 0    | 1 1        |
-| 1 1           | 0 1    | 1 1        |
-| 1 1           | 1 0    | 0 0        |
-| 1 1           | 1 1    | X X        |
-
-*Note: X represents don't care conditions*
-
 ## 🚀 Implementation
 
 ### Hardware Requirements
